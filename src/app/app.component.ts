@@ -14,13 +14,12 @@ export class AppComponent {
   todoValue;
 
   newTodo(event, inputElement) {
-    this.todos.push(inputElement.value);
-    inputElement.value = "";
-
-    //this.todos.push(todoValue.value);
-    //this.todoValue = "";
+    this.todos.push({
+      label: this.todoValue,
+      isComplete: false
+    });
+    this.todoValue = "";
 
     console.log(this.todos);
-    //console.log(inputElement.value);
   }
 }
