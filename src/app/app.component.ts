@@ -1,5 +1,6 @@
 import { element } from "protractor";
 import { Component } from "@angular/core";
+import { DataService } from "./data.service";
 
 @Component({
   selector: "app-root",
@@ -11,35 +12,26 @@ export class AppComponent {
   placeholder = "What needs to be done???";
   backgroundcolor = "#FF9999";
 
-  todos = [];
+  todos = this.dataService.todos;
   todoValue;
 
-  newTodo(event, inputElement) {
-    this.todos.push({
-      label: this.todoValue,
-      isComplete: false
-    });
-    this.todoValue = "";
+  constructor(private dataService: DataService) {}
 
+  newTodo(event, inputElement) {
+    this.dataService.newTodo(this.todoValue);
+    this.todoValue = "";
     console.log(this.todos);
   }
 
   toggleComplete(todo) {
-    todo.isComplete = !todo.isComplete;
+    this.dataService.toggleComplete(todo);
   }
 
   allComplete() {
-    this.todos.forEach(todo => (todo.isComplete = true));
+    this.dataService.allComplete();
   }
 
   removeTodo(todo) {
-    // 方法1
-    // this.todos.splice(this.todos.indexOf(todo.lebel), 1);
-
-    // 方法2
-    this.todos = this.todos.filter(_todo => _todo !== todo);
-
-    // 方法3
-    // this.todos.splice(todo, 1);
+    this.dataService.removeTodo(todo);
   }
 }
