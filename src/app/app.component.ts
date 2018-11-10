@@ -8,6 +8,9 @@ import { Component } from "@angular/core";
 export class AppComponent {
   appTitle = "todo table";
   placeholder = "What needs to be done???";
+  backgroundcolor = "#FF9999";
+
+  todoValue;
 
   newTodo(event, inputElement) {
     console.log(inputElement.value);

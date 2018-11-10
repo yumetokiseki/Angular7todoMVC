@@ -1,10 +1,12 @@
 <section class="todoapp">
   <header class="header">
-    <h1>{{ appTitle }}</h1>
+    <h1>{{ appTitle }} - {{ todoValue }}</h1>
     <input
       class="new-todo"
       [placeholder]="placeholder"
       #todo
+      [(ngModel)]="todoValue"
+      [style.background-color]="backgroundcolor"
       (keyup.enter)="newTodo($event, todo)"
       autofocus
     />
