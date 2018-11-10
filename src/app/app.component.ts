@@ -7,4 +7,5 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   appTitle = "todo table";
+  placeholder = "What needs to be done???";
 }
