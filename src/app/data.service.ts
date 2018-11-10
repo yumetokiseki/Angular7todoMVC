@@ -6,6 +6,10 @@ export class DataService {
 
   todos = [];
 
+  get itemLeft() {
+    return this.todos.filter(x => x.isComplete === false).length;
+  }
+
   newTodo(todo) {
     this.todos.push({
       label: todo,
@@ -30,5 +34,9 @@ export class DataService {
 
     // 方法3
     // this.todos.splice(todo, 1);
+  }
+
+  removeAllCompleteTodo() {
+    this.todos = this.todos.filter(x => x.isComplete === false);
   }
 }

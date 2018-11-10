@@ -15,16 +15,14 @@ export class AppComponent {
   todos = this.dataService.todos;
   todoValue;
 
-  constructor(private dataService: DataService) {}
+  itemLeft = this.dataService.itemLeft;
+
+  constructor(public dataService: DataService) {}
 
   newTodo(event, inputElement) {
     this.dataService.newTodo(this.todoValue);
     this.todoValue = "";
     console.log(this.todos);
-  }
-
-  toggleComplete(todo) {
-    this.dataService.toggleComplete(todo);
   }
 
   allComplete() {
@@ -33,5 +31,13 @@ export class AppComponent {
 
   removeTodo(todo) {
     this.dataService.removeTodo(todo);
+  }
+
+  toggleComplete(todo) {
+    this.dataService.toggleComplete(todo);
+  }
+
+  removeAllCompleteTodo() {
+    this.dataService.removeAllCompleteTodo();
   }
 }
