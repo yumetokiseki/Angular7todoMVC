@@ -5,9 +5,10 @@ import { AppComponent } from "./app.component";
 import { FormsModule } from "@angular/forms";
 import { FooterComponent } from "./footer/footer.component";
 import { DataService } from "./data.service";
+import { FlitersComponent } from "./fliters/fliters.component";
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent],
+  declarations: [AppComponent, FooterComponent, FlitersComponent],
   imports: [BrowserModule, FormsModule],
   providers: [DataService],
   bootstrap: [AppComponent]
