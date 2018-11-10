@@ -1,3 +1,4 @@
+import { element } from "protractor";
 import { Component } from "@angular/core";
 
 @Component({
@@ -21,5 +22,13 @@ export class AppComponent {
     this.todoValue = "";
 
     console.log(this.todos);
+  }
+
+  toggleComplete(todo) {
+    todo.isComplete = !todo.isComplete;
+  }
+
+  allComplete() {
+    this.todos.forEach(todo => (todo.isComplete = true));
   }
 }

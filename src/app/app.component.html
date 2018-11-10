@@ -16,7 +16,7 @@
   -->
 
   <section class="main" *ngIf="todos.length > 0">
-    <input class="toggle-all" type="checkbox" />
+    <input class="toggle-all" type="checkbox" (change)="allComplete()" />
     <label for="toggle-all">Mark all as complete</label>
 
     <ul class="todo-list">
@@ -24,9 +24,14 @@
       <!--
         List items should get the class `editing` when editing and `completed` when marked as completed
       -->
-      <li *ngFor="let todo of todos">
+      <li *ngFor="let todo of todos" [ngClass]="{ completed: todo.isComplete }">
         <div class="view">
-          <input class="toggle" type="checkbox" [checked]="todo.isComplete" />
+          <input
+            class="toggle"
+            type="checkbox"
+            [checked]="todo.isComplete"
+            (change)="toggleComplete(todo)"
+          />
           <label>{{ todo.label }}</label> <button class="destroy"></button>
         </div>
         <input class="edit" value="Create a TodoMVC template" />
@@ -57,5 +62,5 @@
     <button class="clear-completed">Clear completed</button>
   </footer>
 </section>
-<app-footer></app-footer>
+<div app-footer></div>
 <code>{{ todos | json }}</code>
