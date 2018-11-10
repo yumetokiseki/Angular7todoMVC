@@ -1,7 +1,13 @@
 <section class="todoapp">
   <header class="header">
     <h1>{{ appTitle }}</h1>
-    <input class="new-todo" [placeholder]="placeholder" autofocus />
+    <input
+      class="new-todo"
+      [placeholder]="placeholder"
+      #todo
+      (keyup)="newTodo($event, todo)"
+      autofocus
+    />
   </header>
   <!--
     This section should be hidden by default and shown when there are todos
