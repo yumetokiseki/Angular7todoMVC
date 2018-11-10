@@ -5,7 +5,7 @@
       class="new-todo"
       [placeholder]="placeholder"
       #todo
-      (keyup)="newTodo($event, todo)"
+      (keyup.enter)="newTodo($event, todo)"
       autofocus
     />
   </header>
@@ -15,6 +15,7 @@
   <section class="main">
     <input class="toggle-all" type="checkbox" />
     <label for="toggle-all">Mark all as complete</label>
+
     <ul class="todo-list">
       <!-- These are here just to show the structure of the list items -->
       <!--

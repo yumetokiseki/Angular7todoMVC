@@ -10,8 +10,6 @@ export class AppComponent {
   placeholder = "What needs to be done???";
 
   newTodo(event, inputElement) {
-    if (event.code === "Enter") {
-      console.log(inputElement.value);
-    }
+    console.log(inputElement.value);
   }
 }
