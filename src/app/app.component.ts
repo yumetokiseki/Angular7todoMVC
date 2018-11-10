@@ -12,7 +12,6 @@ export class AppComponent {
   placeholder = "What needs to be done???";
   backgroundcolor = "#FF9999";
 
-  todos = this.dataService.todos;
   todoValue;
 
   itemLeft = this.dataService.itemLeft;
