@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
-  name: "statefliter"
+  name: "statefliter",
+  pure: false
 })
 export class StatefliterPipe implements PipeTransform {
   transform(value: any, state?: any): any {
