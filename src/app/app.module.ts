@@ -6,9 +6,10 @@ import { FormsModule } from "@angular/forms";
 import { FooterComponent } from "./footer/footer.component";
 import { DataService } from "./data.service";
 import { FlitersComponent } from "./fliters/fliters.component";
+import { StatefliterPipe } from './statefliter.pipe';
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, FlitersComponent],
+  declarations: [AppComponent, FooterComponent, FlitersComponent, StatefliterPipe],
   imports: [BrowserModule, FormsModule],
   providers: [DataService],
   bootstrap: [AppComponent]

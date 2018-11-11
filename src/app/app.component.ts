@@ -12,6 +12,7 @@ export class AppComponent {
   placeholder = "What needs to be done???";
   backgroundcolor = "#FF9999";
 
+  
   todoValue;
 
   itemLeft = this.dataService.itemLeft;
@@ -21,7 +22,6 @@ export class AppComponent {
   newTodo(event, inputElement) {
     this.dataService.newTodo(this.todoValue);
     this.todoValue = "";
-    console.log(this.todos);
   }
 
   allComplete() {
